@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sommerfest 2025 - Anmeldung</title>
+    <title>Silvesterfeier 2025 - Anmeldung</title>
     <style>
         * {
             margin: 0;
@@ -32,7 +32,7 @@
 
         .sidebar {
             width: 350px;
-            background-color: #1e3a5f;
+            background-color: #1a1a1a;
             color: white;
             padding: 30px;
             overflow-y: auto;
@@ -40,12 +40,12 @@
         }
 
         .sidebar-left {
-            background-color: #2c5282;
+            background-color: #d4af37;
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
         }
 
         .simple-header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);
             color: white;
             padding: 25px 20px;
             text-align: center;
@@ -70,7 +70,7 @@
 
         /* FOOTER MIT ORGA-LOGIN BUTTON */
         .footer {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);
             color: white;
             padding: 20px;
             text-align: center;
@@ -94,20 +94,20 @@
 
         .orga-login-button:hover {
             background: #a0c4ff;
-            color: #1e3a5f;
+            color: #1a1a1a;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         h1 {
-            color: #1e3a5f;
+            color: #1a1a1a;
             font-size: 2.5em;
             margin-bottom: 20px;
             font-weight: normal;
         }
 
         h2 {
-            color: #2c5282;
+            color: #d4af37;
             font-size: 1.8em;
             margin-bottom: 20px;
             font-weight: normal;
@@ -118,7 +118,7 @@
             padding: 25px;
             border-radius: 8px;
             margin-bottom: 30px;
-            border-left: 4px solid #2c5282;
+            border-left: 4px solid #d4af37;
             font-size: 1.15em;
         }
 
@@ -128,7 +128,7 @@
 
         label {
             display: block;
-            color: #1e3a5f;
+            color: #1a1a1a;
             font-weight: bold;
             margin-bottom: 8px;
         }
@@ -148,7 +148,7 @@
         input[type="email"]:focus,
         textarea:focus {
             outline: none;
-            border-color: #2c5282;
+            border-color: #d4af37;
         }
 
         textarea {
@@ -157,7 +157,7 @@
         }
 
         .button {
-            background-color: #2c5282;
+            background-color: #d4af37;
             color: white;
             padding: 14px 30px;
             border: none;
@@ -168,11 +168,11 @@
         }
 
         .button:hover {
-            background-color: #1e3a5f;
+            background-color: #1a1a1a;
         }
 
         .button-secondary {
-            background-color: #4a6fa5;
+            background-color: #c0c0c0;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -184,14 +184,14 @@
         }
 
         .button-secondary:hover {
-            background-color: #2c5282;
+            background-color: #d4af37;
         }
 
         .sidebar h3 {
             font-size: 1.5em;
             margin-bottom: 20px;
             font-weight: normal;
-            border-bottom: 2px solid #4a6fa5;
+            border-bottom: 2px solid #c0c0c0;
             padding-bottom: 10px;
         }
 
@@ -204,7 +204,7 @@
             padding: 12px;
             margin-bottom: 10px;
             border-radius: 4px;
-            border-left: 3px solid #4a6fa5;
+            border-left: 3px solid #c0c0c0;
         }
 
         .contribution-item strong {
@@ -268,7 +268,7 @@
         }
 
         .progress-fill {
-            background: linear-gradient(90deg, #a0c4ff, #2c5282);
+            background: linear-gradient(90deg, #a0c4ff, #d4af37);
             height: 100%;
             width: 0%;
             animation: fillProgress 3s ease-in-out;
@@ -361,7 +361,7 @@
         .preferences-textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #4a6fa5;
+            border: 1px solid #c0c0c0;
             border-radius: 4px;
             background-color: rgba(255,255,255,0.1);
             color: white;
@@ -449,66 +449,70 @@
         <!-- Grillbuffet-Präferenzen Sidebar (Links) -->
         <div class="sidebar sidebar-left">
             <div class="preferences-section">
-                <h3>🍖 GRILLBUFFET-PRÄFERENZEN</h3>
+                <h3>🍽️ SILVESTER-MENÜ-PRÄFERENZEN</h3>
                 <p style="color: #cbd5e0; font-size: 0.9em; margin-bottom: 20px;">
                     Mehrfachauswahl möglich - hilft uns bei der Bestellplanung
                 </p>
-                
+
                 <div class="preferences-category">
-                    <h5>Wurst:</h5>
+                    <h5>Vorspeisen:</h5>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="wurst_schinkenwurst" value="Schinkenwurst">
-                            <label for="wurst_schinkenwurst">Schinkenwurst</label>
+                            <input type="checkbox" id="vorspeise_lachstatar" value="Lachstatar">
+                            <label for="vorspeise_lachstatar">Lachstatar</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="wurst_rostbratwurst" value="Rostbratwurst">
-                            <label for="wurst_rostbratwurst">Rostbratwurst</label>
+                            <input type="checkbox" id="vorspeise_carpaccio" value="Carpaccio">
+                            <label for="vorspeise_carpaccio">Carpaccio</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="wurst_gefluegelwurst" value="Geflügelwurst">
-                            <label for="wurst_gefluegelwurst">Geflügelwurst</label>
+                            <input type="checkbox" id="vorspeise_suppe" value="Festliche Suppe">
+                            <label for="vorspeise_suppe">Festliche Suppe</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="preferences-category">
-                    <h5>Fleisch:</h5>
+                    <h5>Hauptgang:</h5>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="fleisch_haehnchenbrust" value="Hähnchenbrust">
-                            <label for="fleisch_haehnchenbrust">Hähnchenbrust</label>
+                            <input type="checkbox" id="hauptgang_rinderfilet" value="Rinderfilet">
+                            <label for="hauptgang_rinderfilet">Rinderfilet</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="fleisch_schweinenacken" value="Schweinenacken">
-                            <label for="fleisch_schweinenacken">Schweinenacken</label>
+                            <input type="checkbox" id="hauptgang_ente" value="Ente">
+                            <label for="hauptgang_ente">Ente</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="fleisch_putenbrust" value="Putenbrust">
-                            <label for="fleisch_putenbrust">Putenbrust</label>
+                            <input type="checkbox" id="hauptgang_lachs" value="Lachs">
+                            <label for="hauptgang_lachs">Lachs</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="fleisch_rind" value="Rind">
-                            <label for="fleisch_rind">Rind</label>
+                            <input type="checkbox" id="hauptgang_vegetarisch" value="Vegetarisches Festmenü">
+                            <label for="hauptgang_vegetarisch">Vegetarisches Festmenü</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="preferences-category">
-                    <h5>Vegetarisch/Vegan:</h5>
+                    <h5>Desserts:</h5>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="veg_grillgemuese" value="Grillgemüse">
-                            <label for="veg_grillgemuese">Grillgemüse</label>
+                            <input type="checkbox" id="dessert_tiramisu" value="Tiramisu">
+                            <label for="dessert_tiramisu">Tiramisu</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="veg_vegane_bratwurst" value="Vegane Bratwurst">
-                            <label for="veg_vegane_bratwurst">Vegane Bratwurst</label>
+                            <input type="checkbox" id="dessert_mousse" value="Mousse au Chocolat">
+                            <label for="dessert_mousse">Mousse au Chocolat</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dessert_pannacotta" value="Panna Cotta">
+                            <label for="dessert_pannacotta">Panna Cotta</label>
                         </div>
                     </div>
                 </div>
 
-                <textarea class="preferences-textarea" id="grillbuffet_bemerkungen" placeholder="Spezielle Wünsche zum Grillbuffet..."></textarea>
+                <textarea class="preferences-textarea" id="grillbuffet_bemerkungen" placeholder="Spezielle Wünsche zum Silvester-Menü..."></textarea>
             </div>
         
             <div class="preferences-section">
@@ -572,7 +576,7 @@
                 </div>
 
                 <div class="preferences-category">
-                    <h5>Wein/Sekt:</h5>
+                    <h5>Wein:</h5>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="wein_rotwein" value="Rotwein">
@@ -582,9 +586,41 @@
                             <input type="checkbox" id="wein_weisswein" value="Weißwein">
                             <label for="wein_weisswein">Weißwein</label>
                         </div>
+                    </div>
+                </div>
+
+                <div class="preferences-category">
+                    <h5>Sekt/Champagner:</h5>
+                    <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="wein_prosecco" value="Prosecco">
-                            <label for="wein_prosecco">Prosecco</label>
+                            <input type="checkbox" id="sekt_prosecco" value="Prosecco">
+                            <label for="sekt_prosecco">Prosecco</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sekt_champagner" value="Champagner">
+                            <label for="sekt_champagner">Champagner</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sekt_cava" value="Cava">
+                            <label for="sekt_cava">Cava</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preferences-category">
+                    <h5>Silvester-Cocktails:</h5>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cocktail_hugo" value="Hugo">
+                            <label for="cocktail_hugo">Hugo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cocktail_aperol" value="Aperol Spritz">
+                            <label for="cocktail_aperol">Aperol Spritz</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cocktail_bellini" value="Bellini">
+                            <label for="cocktail_bellini">Bellini</label>
                         </div>
                     </div>
                 </div>
@@ -599,14 +635,14 @@
         <div class="main-content">
             <!-- HEADER OHNE BUTTON -->
             <div class="simple-header">
-                <h1 class="main-title">Sommerfest der Lübecker Freimaurer</h1>
-                <h2 class="event-title">Sommerfest 2025</h2>
+                <h1 class="main-title">Silvesterfeier der Lübecker Freimaurer</h1>
+                <h2 class="event-title">Silvesterfeier 2025</h2>
             </div>
             
             <!-- NEUER WILLKOMMENSTEXT -->
             <div class="welcome-text">
-                <p>Nach unserem grandiosen Sommerfest 2024 mit 120 Gästen freuen wir uns auch dieses Jahr wieder ein schönes Sommerfest zu gestalten. Wie gewohnt erwartet euch ein köstliches Grillbuffet mit Fleisch, Geflügel und vielen weiteren Leckereien für 18 Euro inklusive Eintritt. Dazu gestalten wir gemeinsam ein buntes Beilagenbuffet aus unserer aller Beiträgen.</p>
-                <p>Bitte tragt links ein, was ihr euch für das Grillbuffet und für die Getränke wünscht (In der Handyansicht findet ihr die Listen im unteren Bereich). Mehrfachnennungen sind ausdrücklich erlaubt. Eure Angaben helfen uns dabei, die Bestellungen optimal zu planen.</p>
+                <p>Wir laden euch herzlich zu unserer Silvesterfeier 2025 ein! Lasst uns gemeinsam das alte Jahr gebührend verabschieden und das neue Jahr willkommen heißen. Erwartet ein festliches Menü mit köstlichen Speisen und erlesenen Getränken. Dazu gestalten wir gemeinsam ein buntes Beilagenbuffet aus unserer aller Beiträgen.</p>
+                <p>Bitte tragt links ein, was ihr euch für das Silvester-Menü und für die Getränke wünscht (In der Handyansicht findet ihr die Listen im unteren Bereich). Mehrfachnennungen sind ausdrücklich erlaubt. Eure Angaben helfen uns dabei, die Bestellungen optimal zu planen.</p>
             </div>
 
             <div id="errorMessage" class="error-message">
@@ -615,8 +651,8 @@
 
             <form id="registrationForm">
                 <!-- ADRESSE HINZUGEFÜGT -->
-                <h2>Deine Anmeldung zum Sommerfest am Samstag, den 23. August 2025 ab 18 Uhr<br>
-                    <small style="font-size: 0.8em; color: #4a6fa5; font-weight: normal;">im Logenhaus Lübeck, St. Annen-Str. / Ecke Schildstraße - Eingang Hoftor</small>
+                <h2>Deine Anmeldung zur Silvesterfeier am Mittwoch, den 31. Dezember 2025 ab 19 Uhr<br>
+                    <small style="font-size: 0.8em; color: #c0c0c0; font-weight: normal;">im Logenhaus Lübeck, St. Annen-Str. / Ecke Schildstraße - Eingang Hoftor</small>
                 </h2>
                 
                 <div class="form-group">
@@ -642,8 +678,8 @@
 
                 <h2>Dein/Euer Beitrag zum Buffet</h2>
                 
-                <div style="background-color: #e8f4f8; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #2c5282;">
-                    <p style="margin: 0; color: #2c5282; font-size: 0.95em;"><strong>💡 Hinweis:</strong> Buffet-Beiträge sind freiwillig! Du kannst auch ohne eigenen Beitrag am Fest teilnehmen. Das Grillbuffet ist im Eintrittspreis enthalten.</p>
+                <div style="background-color: #e8f4f8; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #d4af37;">
+                    <p style="margin: 0; color: #d4af37; font-size: 0.95em;"><strong>💡 Hinweis:</strong> Buffet-Beiträge sind freiwillig! Du kannst auch ohne eigenen Beitrag am Fest teilnehmen. Das Grillbuffet ist im Eintrittspreis enthalten.</p>
                 </div>
                 
                 <div class="form-group">
@@ -673,7 +709,7 @@
 
     <!-- FOOTER MIT ORGA-LOGIN BUTTON -->
     <div class="footer">
-        <p style="font-size: 0.9em; margin-bottom: 10px;">© 2025 Sommerfest der Lübecker Freimaurer</p>
+        <p style="font-size: 0.9em; margin-bottom: 10px;">© 2025 Silvesterfeier der Lübecker Freimaurer</p>
         <a href="admin.html" class="orga-login-button" title="Für Organisatoren">
             🔑 Orga-Team Login
         </a>
@@ -724,7 +760,7 @@
         }
 
         // n8n Webhook URL
-        const N8N_WEBHOOK_URL = 'https://automatisierung.frankrath.de/webhook/sommerfest-anmeldung';
+        const N8N_WEBHOOK_URL = 'https://automatisierung.frankrath.de/webhook/silvester-anmeldung';
 
         // Gäste-Zahlen-Berechnung
         function calculateGuestNumbers(companions) {
@@ -750,27 +786,27 @@
 
         // Neue Funktion: Präferenzen sammeln
         function collectPreferences() {
-            const grillbuffetPrefs = [];
+            const menuPrefs = [];
             const getraenkePrefs = [];
-            
-            // Grillbuffet-Präferenzen sammeln
-            const grillbuffetCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="wurst_"], input[type="checkbox"][id^="fleisch_"], input[type="checkbox"][id^="veg_"]');
-            grillbuffetCheckboxes.forEach(checkbox => {
+
+            // Silvester-Menü-Präferenzen sammeln
+            const menuCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="vorspeise_"], input[type="checkbox"][id^="hauptgang_"], input[type="checkbox"][id^="dessert_"]');
+            menuCheckboxes.forEach(checkbox => {
                 if (checkbox.checked) {
-                    grillbuffetPrefs.push(checkbox.value);
+                    menuPrefs.push(checkbox.value);
                 }
             });
-            
+
             // Getränke-Präferenzen sammeln
-            const getraenkeCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="soft_"], input[type="checkbox"][id^="alkfrei_"], input[type="checkbox"][id^="bier_"], input[type="checkbox"][id^="wein_"]');
+            const getraenkeCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="soft_"], input[type="checkbox"][id^="alkfrei_"], input[type="checkbox"][id^="bier_"], input[type="checkbox"][id^="wein_"], input[type="checkbox"][id^="sekt_"], input[type="checkbox"][id^="cocktail_"]');
             getraenkeCheckboxes.forEach(checkbox => {
                 if (checkbox.checked) {
                     getraenkePrefs.push(checkbox.value);
                 }
             });
-            
+
             return {
-                grillbuffet: grillbuffetPrefs,
+                grillbuffet: menuPrefs,
                 grillbuffet_bemerkungen: document.getElementById('grillbuffet_bemerkungen').value,
                 getraenke: getraenkePrefs,
                 getraenke_bemerkungen: document.getElementById('getraenke_bemerkungen').value
@@ -856,7 +892,7 @@
                 // Button wieder aktivieren bei Fehler
                 submitButton.disabled = false;
                 submitButton.textContent = originalText;
-                submitButton.style.backgroundColor = "#2c5282";
+                submitButton.style.backgroundColor = "#d4af37";
                 submitButton.style.cursor = "pointer";
                 
                 document.getElementById("errorMessage").textContent = "Bitte fülle alle Pflichtfelder aus.";
@@ -927,7 +963,7 @@
 
         async function loadLiveBuffetData() {
             try {
-                const response = await fetch("https://automatisierung.frankrath.de/webhook/buffet-uebersicht");
+                const response = await fetch("https://automatisierung.frankrath.de/webhook/silvester-buffet-uebersicht");
                 const data = await response.json();
                 
                 const liveList = document.getElementById("contributionsList");
@@ -951,7 +987,7 @@
 
         async function loadHelferStatistik() {
             try {
-                const response = await fetch("https://automatisierung.frankrath.de/webhook/helfer-statistik");
+                const response = await fetch("https://automatisierung.frankrath.de/webhook/silvester-helfer-statistik");
                 const data = await response.json();
                 
                 const aufbauElement = document.getElementById("aufbau-count");
