@@ -561,13 +561,13 @@
             };
 
             try {
-                // Daten an n8n senden
-                const params = new URLSearchParams(completeData);
-                const urlWithParams = N8N_WEBHOOK_URL + "?" + params.toString();
-                
-                const response = await fetch(urlWithParams, {
-                    method: 'GET',
-                    headers: {}
+                // Daten an n8n senden (POST mit JSON-Body)
+                const response = await fetch(N8N_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(completeData)
                 });
 
                 if (response.ok) {
