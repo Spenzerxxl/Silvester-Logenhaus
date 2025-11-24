@@ -1058,7 +1058,7 @@
             }
             
             // Verstecke Export-Tab, zeige Präferenz-Sektion
-            document.getElementById('exportTab')?.style.display = 'none';
+            const exportTabEl = document.getElementById('exportTab'); if (exportTabEl) exportTabEl.style.display = 'none';
             document.getElementById('preferencesSection').style.display = 'block';
             
             // Grillbuffet-Präferenzen zählen
@@ -2091,7 +2091,7 @@ function previewEmail(index) {
         document.getElementById('previewContent').textContent = personalizedEmail;
     }
     
-    document.getElementById('emailPreviewModal')?.style.display = 'block';
+    const modalEl = document.getElementById('emailPreviewModal'); if (modalEl) modalEl.style.display = 'block';
 }
 
 // Vorschau schließen
