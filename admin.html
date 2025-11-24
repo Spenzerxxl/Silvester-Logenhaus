@@ -343,24 +343,17 @@
 
             <!-- Statistik-Karten -->
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card" onclick="showTab('participants')" style="cursor: pointer;">
                     <h3>📊 Anmeldungen</h3>
                     <div class="stat-number" id="totalRegistrations">0</div>
                     <small>Teilnehmer registriert</small>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" onclick="showTab('buffet')" style="cursor: pointer;">
                     <h3>🍽️ Buffet-Beiträge</h3>
                     <div class="stat-number" id="totalBuffetItems">0</div>
                     <small>Verschiedene Gerichte</small>
                 </div>
-                <div class="stat-card">
-                    <h3>🤝 Helfer Aufbau</h3>
-                    <div class="stat-number" id="aufbauHelfer">0</div>
-                    <small>Freiwillige Helfer</small>
-                </div>
-                <div class="stat-card">
-                    <h3>🧹 Helfer Abbau</h3>
-                    <div class="stat-number" id="abbauHelfer">0</div>
+                
                     <small>Freiwillige Helfer</small>
                 </div>
             </div>
@@ -370,10 +363,7 @@
                 <button class="tab active" onclick="showTab('participants')">👥 Teilnehmer</button>
                 <button class="tab" onclick="showTab('buffet')">🍽️ Buffet-Planung</button>
                 <button class="tab" onclick="showTab('preferences')">⭐ Präferenzen</button>
-                <button class="tab" onclick="showTab('helpers')">🤝 Helfer</button>
-                <button class="tab" onclick="showTab('export')">📥 Export</button>
-                <button class="tab" onclick="showTab('email'); console.log('E-Mail Tab clicked!');">📧 E-Mail Versand</button>
-            </div>
+                </div>
 
             <!-- Tab: Teilnehmer -->
             <div id="tab-participants" class="tab-content">
@@ -580,53 +570,7 @@
             </div>
 
             <!-- Tab: Helfer -->
-            <div id="tab-helpers" class="tab-content">
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>E-Mail</th>
-                                <th>Aufbau (22.08.)</th>
-                                <th>Abbau (24.08.)</th>
-                                <th>Hinweise</th>
-                            </tr>
-                        </thead>
-                        <tbody id="helpersTable">
-                            <tr>
-                                <td colspan="5" class="loading">Lade Helfer-Daten...</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Tab: Export -->
-            <div id="tab-export" class="tab-content">
-                <div class="export-section">
-                    <h3>📥 Daten-Export</h3>
-                    <p>Exportieren Sie alle Daten für die weitere Bearbeitung:</p>
-                    
-                    <div class="export-buttons">
-                        <button class="btn btn-primary" id="exportAll">
-                            📊 Komplette Teilnehmerliste
-                        </button>
-                        <button class="btn btn-success" id="exportBuffet">
-                            🍽️ Buffet-Planung
-                        </button>
-                        
-                        <button class="btn btn-primary" id="exportHelpers">
-                            🤝 Helfer-Liste
-                        </button>
-                        <button class="btn btn-warning" id="exportBilling" style="background-color: #f39c12;">
-                            💰 Abrechnung (für Kasse)
-                        </button>
-                        <button class="btn btn-info" id="exportPreferences" style="background-color: #17a2b8;">
-                            🍽️ Präferenzen-Export
-                        </button>
-                    </div>
-                    
-                    <!-- Logen-Statistik -->
+            <!-- Logen-Statistik -->
                     <div style="margin-top: 30px;">
                         <h3>📊 Logen-Übersicht</h3>
                         <div id="lodgeStatistics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
@@ -643,210 +587,10 @@
             </div>
             <!-- Tab: E-Mail Versand -->
             <!-- Tab: E-Mail Versand (ERWEITERT) -->
-            <div id="tab-email" class="tab-content" style="padding: 20px;">
-                <h3>📧 E-Mail Reminder versenden</h3>
-                
-                <!-- Statistik-Box -->
-                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #17a2b8;">
-                    <p style="font-size: 16px; margin-bottom: 10px;">
-                        📊 <span id="selectedCount" style="font-weight: bold; color: #28a745;">0</span> von 
-                        <span id="totalEmailCount" style="font-weight: bold; color: #2a5298;">58</span> Empfängern ausgewählt
-                    </p>
-                    <div style="display: flex; gap: 15px; margin-top: 10px;">
-                        <span style="display: flex; align-items: center;">
-                            <span style="width: 12px; height: 12px; background: #28a745; border-radius: 50%; margin-right: 5px;"></span>
-                            Normal: <span id="normalCount">0</span>
-                        </span>
-                        <span style="display: flex; align-items: center;">
-                            <span style="width: 12px; height: 12px; background: #17a2b8; border-radius: 50%; margin-right: 5px;"></span>
-                            Nur Aufbau: <span id="aufbauCount">0</span>
-                        </span>
-                        <span style="display: flex; align-items: center;">
-                            <span style="width: 12px; height: 12px; background: #ffc107; border-radius: 50%; margin-right: 5px;"></span>
-                            Nur Abbau: <span id="abbauCount">0</span>
-                        </span>
-                        <span style="display: flex; align-items: center;">
-                            <span style="width: 12px; height: 12px; background: #dc3545; border-radius: 50%; margin-right: 5px;"></span>
-                            Beides: <span id="beideCount">0</span>
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Template-Editor Section -->
-                <div style="margin: 30px 0;">
-                    <h4>📝 E-Mail-Templates anpassen</h4>
-                    <p style="color: #6c757d; margin-bottom: 20px;">
-                        Passen Sie die Templates an. Verfügbare Platzhalter: [Name], [Gäste], [Buffet], [Personen], [Loge]
-                    </p>
-                    
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <!-- Template 1: Normal -->
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #28a745;">
-                            <h5 style="color: #28a745; margin-bottom: 10px;">🟢 Normale Teilnehmer</h5>
-                            <textarea id="template-normal" style="width: 100%; height: 200px; padding: 10px; border: 1px solid #dee2e6; border-radius: 5px; font-family: monospace; font-size: 13px;">Liebe/r [Name],
-
-wir freuen uns auf dich beim Silvesterfeier am 23.08.2025!
-
-📍 Ort: Logenhaus Lübeck
-🕐 Zeit: ab 19:00 Uhr
-
-Du hast angemeldet:
-👥 Personen: [Personen] (inkl. [Gäste])
-🍽️ Dein Buffet-Beitrag: [Buffet]
-
-Wir freuen uns auf einen schönen gemeinsamen Abend!
-
-Mit brüderlichen Grüßen
-Das Orga-Team
-
-📧 Bei Fragen: silvester@freimaurer-hl.de</textarea>
-                        </div>
-
-                        <!-- Template 2: Aufbau -->
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #17a2b8;">
-                            <h5 style="color: #17a2b8; margin-bottom: 10px;">🔵 Aufbau-Helfer</h5>
-                            <textarea id="template-aufbau" style="width: 100%; height: 200px; padding: 10px; border: 1px solid #dee2e6; border-radius: 5px; font-family: monospace; font-size: 13px;">Liebe/r [Name],
-
-wir freuen uns auf dich beim Silvesterfeier am 23.08.2025!
-
-📍 Ort: Logenhaus Lübeck
-🕐 Zeit: ab 19:00 Uhr
-
-🔨 WICHTIG: Du hast dich als AUFBAU-HELFER eingetragen!
-📅 Freitag, 22.08.2025
-⏰ 16:00 Uhr
-📍 Treffpunkt: Logenhaus
-
-Deine Anmeldung:
-👥 Personen: [Personen] (inkl. [Gäste])
-🍽️ Buffet-Beitrag: [Buffet]
-
-Vielen Dank für deine Unterstützung beim Aufbau!
-
-Mit brüderlichen Grüßen
-Das Orga-Team</textarea>
-                        </div>
-
-                        <!-- Template 3: Abbau -->
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
-                            <h5 style="color: #ff9800; margin-bottom: 10px;">🟡 Abbau-Helfer</h5>
-                            <textarea id="template-abbau" style="width: 100%; height: 200px; padding: 10px; border: 1px solid #dee2e6; border-radius: 5px; font-family: monospace; font-size: 13px;">Liebe/r [Name],
-
-wir freuen uns auf dich beim Silvesterfeier am 23.08.2025!
-
-📍 Ort: Logenhaus Lübeck
-🕐 Zeit: ab 19:00 Uhr
-
-🧹 WICHTIG: Du hast dich als ABBAU-HELFER eingetragen!
-📅 Sonntag, 24.08.2025
-⏰ 14:00 Uhr
-📍 Treffpunkt: Logenhaus
-
-Deine Anmeldung:
-👥 Personen: [Personen] (inkl. [Gäste])
-🍽️ Buffet-Beitrag: [Buffet]
-
-Vielen Dank für deine Unterstützung beim Abbau!
-
-Mit brüderlichen Grüßen
-Das Orga-Team</textarea>
-                        </div>
-
-                        <!-- Template 4: Beides -->
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #dc3545;">
-                            <h5 style="color: #dc3545; margin-bottom: 10px;">🔴 Aufbau + Abbau</h5>
-                            <textarea id="template-beide" style="width: 100%; height: 200px; padding: 10px; border: 1px solid #dee2e6; border-radius: 5px; font-family: monospace; font-size: 13px;">Liebe/r [Name],
-
-wir freuen uns auf dich beim Silvesterfeier am 23.08.2025!
-
-📍 Ort: Logenhaus Lübeck
-🕐 Zeit: ab 19:00 Uhr
-
-💪 DANKE für deine DOPPELTE Unterstützung!
-
-🔨 AUFBAU:
-📅 Freitag, 22.08.2025
-⏰ 16:00 Uhr
-
-🧹 ABBAU:
-📅 Sonntag, 24.08.2025
-⏰ 14:00 Uhr
-
-Deine Anmeldung:
-👥 Personen: [Personen] (inkl. [Gäste])
-🍽️ Buffet-Beitrag: [Buffet]
-
-Vielen Dank für deinen großartigen Einsatz!
-
-Mit brüderlichen Grüßen
-Das Orga-Team</textarea>
-                        </div>
-                    </div>
-
-                    <!-- Template-Aktionen -->
-                    <div style="margin-top: 20px; display: flex; gap: 10px;">
-                        <button onclick="saveTemplates()" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                            💾 Templates speichern
-                        </button>
-                        <button onclick="resetTemplates()" style="padding: 10px 20px; background: #6c757d; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                            🔄 Auf Standard zurücksetzen
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Empfänger-Kontrolltabelle -->
-                <div style="margin: 30px 0;">
-                    <h4>👥 Empfänger-Kontrolle</h4>
-                    <div style="margin: 15px 0; display: flex; gap: 10px; align-items: center;">
-                        <button onclick="selectAllRecipients()" style="padding: 8px 15px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                            ✅ Alle auswählen
-                        </button>
-                        <button onclick="deselectAllRecipients()" style="padding: 8px 15px; background: #6c757d; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                            ❌ Alle abwählen
-                        </button>
-                        <input type="text" id="recipientFilter" placeholder="🔍 Namen filtern..." onkeyup="filterRecipients()" 
-                               style="padding: 8px; border: 1px solid #dee2e6; border-radius: 5px; flex: 1; max-width: 300px;">
-                    </div>
-
-                    <div style="max-height: 400px; overflow-y: auto; border: 1px solid #dee2e6; border-radius: 5px;">
-                        <table style="width: 100%; border-collapse: collapse;">
-                            <thead style="background: #f8f9fa; position: sticky; top: 0;">
-                                <tr>
-                                    <th style="padding: 10px; text-align: left; width: 50px;">✓</th>
-                                    <th style="padding: 10px; text-align: left;">Name</th>
-                                    <th style="padding: 10px; text-align: left;">E-Mail</th>
-                                    <th style="padding: 10px; text-align: left;">Loge</th>
-                                    <th style="padding: 10px; text-align: left;">Kategorie</th>
-                                    <th style="padding: 10px; text-align: center;">Aktion</th>
-                                </tr>
-                            </thead>
-                            <tbody id="recipientTableBody">
-                                <!-- Wird dynamisch gefüllt -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Versand-Aktionen -->
-                <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border: 2px solid #ffc107; border-radius: 10px;">
-                    <h4 style="color: #856404; margin-bottom: 15px;">⚠️ Versand-Optionen</h4>
-                    
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                        <button onclick="sendTestEmail()" style="padding: 15px 25px; background: #ffc107; color: #212529; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
-                            🧪 Test-E-Mail an mich senden
-                        </button>
-                        
-                        <button onclick="sendSelectedEmails()" style="padding: 15px 25px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
-                            🚀 E-Mails an ausgewählte Empfänger senden
-                        </button>
-                    </div>
-                    
-                    <div id="emailStatus" style="margin-top: 20px; padding: 15px; border-radius: 5px; display: none;"></div>
-                </div>
             </div>
-    </div>
+        </div>
 
-    <script>
+        <script>
         // API-Endpunkte
         const LOGIN_API_URL = 'https://automatisierung.frankrath.de/webhook/silvester-orga-login';
         const PARTICIPANTS_API_URL = 'https://automatisierung.frankrath.de/webhook/silvester-get-participants';
