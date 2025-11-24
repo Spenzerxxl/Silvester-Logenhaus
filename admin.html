@@ -699,7 +699,7 @@ Wir freuen uns auf einen schönen gemeinsamen Abend!
 Mit brüderlichen Grüßen
 Das Orga-Team
 
-📧 Bei Fragen: sommerfest@zum-fuellhorn.de</textarea>
+📧 Bei Fragen: silvester@freimaurer-hl.de</textarea>
                         </div>
 
                         <!-- Template 2: Aufbau -->
@@ -1732,7 +1732,7 @@ Das Orga-Team</textarea>
             
             const headers = ['Name', 'E-Mail', 'Loge', 'Begleitung', 'Gesamt-Personen', 'Anmeldedatum', 'Buffet-Beiträge', 'Aufbau-Helfer', 'Abbau-Helfer', 'Hinweise'];
             
-            exportToCSV(participantData, headers, 'sommerfest_teilnehmer_komplett.csv');
+            exportToCSV(participantData, headers, 'silvester_teilnehmer_komplett.csv');
         });
 
         
@@ -1767,7 +1767,7 @@ Das Orga-Team</textarea>
             
             const headers = ['Gericht', 'Anbieter', 'Portionen', 'E-Mail'];
             
-            exportToCSV(buffetItems, headers, 'sommerfest_buffet_planung.csv');
+            exportToCSV(buffetItems, headers, 'silvester_buffet_planung.csv');
         });
 
         document.getElementById('exportHelpers').addEventListener('click', function() {
@@ -1811,7 +1811,7 @@ Das Orga-Team</textarea>
             
             const headers = ['Name', 'E-Mail', 'Aufbau (22.08.)', 'Abbau (24.08.)', 'Hinweise'];
             
-            exportToCSV(helperData, headers, 'sommerfest_helfer_liste.csv');
+            exportToCSV(helperData, headers, 'silvester_helfer_liste.csv');
         });
 
         document.getElementById('exportBilling').addEventListener('click', function() {
@@ -1856,7 +1856,7 @@ Das Orga-Team</textarea>
             // 4. CSV EXPORT
             const headers = ['Name', 'Loge/Gastgeber', 'Bezahlt'];
             
-            exportToCSV(allPersons, headers, 'sommerfest_abrechnung_kasse.csv');
+            exportToCSV(allPersons, headers, 'silvester_abrechnung_kasse.csv');
         });
 
         // Initial Load
