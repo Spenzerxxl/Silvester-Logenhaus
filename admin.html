@@ -44,7 +44,7 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -353,9 +353,6 @@
                     <div class="stat-number" id="totalBuffetItems">0</div>
                     <small>Verschiedene Gerichte</small>
                 </div>
-                
-                    <small>Freiwillige Helfer</small>
-                </div>
             </div>
 
             <!-- Tabs -->
@@ -363,7 +360,7 @@
                 <button class="tab active" onclick="showTab('participants')">👥 Teilnehmer</button>
                 <button class="tab" onclick="showTab('buffet')">🍽️ Buffet-Planung</button>
                 <button class="tab" onclick="showTab('preferences')">⭐ Präferenzen</button>
-                </div>
+            </div>
 
             <!-- Tab: Teilnehmer -->
             <div id="tab-participants" class="tab-content">
