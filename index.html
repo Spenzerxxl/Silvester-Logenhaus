@@ -837,7 +837,7 @@
             }
 
             // DOPPELEINTRAG-FIX: Nur Datensammlung, KEIN n8n-Request
-            // n8n-Request erfolgt erst auf helfer.html mit allen Daten
+            // Daten werden direkt an n8n gesendet
             console.log('Daten für Weiterleitung vorbereitet (mit Präferenzen):', formData);
             
             // Neue Beiträge zur lokalen Liste hinzufügen (optional)
@@ -873,11 +873,13 @@
             buffetItemCount = 1;
             
             // UX-VERBESSERUNG: Längere Wartezeit für bessere UX (3 Sekunden für Overlay-Anzeige)
-            setTimeout(() => {
-                anmeldungAbgeschlossen = true; // Warnung bei Seitenverlassen deaktivieren
+            setTimeout(async () => {
+                anmeldungAbgeschlossen = true;
                 
                 const guestNumbers = calculateGuestNumbers(formData.companions);
-                const helferParams = new URLSearchParams({
+                
+                // Alle Daten für n8n vorbereiten
+                const completeData = {
                     name: formData.name,
                     email: formData.email,
                     loge: formData.lodge,
@@ -887,12 +889,28 @@
                     anzahlGaeste: guestNumbers.anzahlGaeste.toString(),
                     gesamtPersonen: guestNumbers.gesamtPersonen.toString(),
                     timestamp: new Date().toISOString(),
-                    // Neue Präferenzen-Parameter
                     grillbuffet_praeferenzen: formData.grillbuffet_praeferenzen,
                     getraenke_praeferenzen: formData.getraenke_praeferenzen,
-                    getraenke_bemerkungen: formData.getraenke_bemerkungen
-                });
-                window.location.href = `helfer.html?${helferParams.toString()}`;
+                    getraenke_bemerkungen: formData.getraenke_bemerkungen,
+                    aufbau: '',
+                    abbau: '',
+                    bemerkungen: ''
+                };
+                
+                // Direkt an n8n senden
+                try {
+                    await fetch('https://automatisierung.frankrath.de/webhook/silvester-anmeldung', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(completeData).toString()
+                    });
+                } catch (error) {
+                    console.error('Fehler:', error);
+                }
+                
+                // Zur Abschlussseite weiterleiten
+                const abschlussParams = new URLSearchParams(completeData);
+                window.location.href = `abschluss.html?${abschlussParams.toString()}`;
             }, 3000);
         });
 
