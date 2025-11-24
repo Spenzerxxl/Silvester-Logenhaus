@@ -449,73 +449,6 @@
         <!-- Grillbuffet-Präferenzen Sidebar (Links) -->
         <div class="sidebar sidebar-left">
             <div class="preferences-section">
-                <h3>🍽️ SILVESTER-MENÜ-PRÄFERENZEN</h3>
-                <p style="color: #cbd5e0; font-size: 0.9em; margin-bottom: 20px;">
-                    Mehrfachauswahl möglich - hilft uns bei der Bestellplanung
-                </p>
-
-                <div class="preferences-category">
-                    <h5>Vorspeisen:</h5>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="vorspeise_lachstatar" value="Lachstatar">
-                            <label for="vorspeise_lachstatar">Lachstatar</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="vorspeise_carpaccio" value="Carpaccio">
-                            <label for="vorspeise_carpaccio">Carpaccio</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="vorspeise_suppe" value="Festliche Suppe">
-                            <label for="vorspeise_suppe">Festliche Suppe</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preferences-category">
-                    <h5>Hauptgang:</h5>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="hauptgang_rinderfilet" value="Rinderfilet">
-                            <label for="hauptgang_rinderfilet">Rinderfilet</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="hauptgang_ente" value="Ente">
-                            <label for="hauptgang_ente">Ente</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="hauptgang_lachs" value="Lachs">
-                            <label for="hauptgang_lachs">Lachs</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="hauptgang_vegetarisch" value="Vegetarisches Festmenü">
-                            <label for="hauptgang_vegetarisch">Vegetarisches Festmenü</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preferences-category">
-                    <h5>Desserts:</h5>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="dessert_tiramisu" value="Tiramisu">
-                            <label for="dessert_tiramisu">Tiramisu</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="dessert_mousse" value="Mousse au Chocolat">
-                            <label for="dessert_mousse">Mousse au Chocolat</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="dessert_pannacotta" value="Panna Cotta">
-                            <label for="dessert_pannacotta">Panna Cotta</label>
-                        </div>
-                    </div>
-                </div>
-
-                <textarea class="preferences-textarea" id="grillbuffet_bemerkungen" placeholder="Spezielle Wünsche zum Silvester-Menü..."></textarea>
-            </div>
-        
-            <div class="preferences-section">
                 <h3>🍺 Getränke-Präferenzen</h3>
                 <p style="color: #555; font-size: 0.9em; margin-bottom: 20px;">
                     Mehrfachauswahl möglich - hilft uns bei der Bestellplanung
@@ -786,16 +719,8 @@
 
         // Neue Funktion: Präferenzen sammeln
         function collectPreferences() {
-            const menuPrefs = [];
             const getraenkePrefs = [];
 
-            // Silvester-Menü-Präferenzen sammeln
-            const menuCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="vorspeise_"], input[type="checkbox"][id^="hauptgang_"], input[type="checkbox"][id^="dessert_"]');
-            menuCheckboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    menuPrefs.push(checkbox.value);
-                }
-            });
 
             // Getränke-Präferenzen sammeln
             const getraenkeCheckboxes = document.querySelectorAll('input[type="checkbox"][id^="soft_"], input[type="checkbox"][id^="alkfrei_"], input[type="checkbox"][id^="bier_"], input[type="checkbox"][id^="wein_"], input[type="checkbox"][id^="sekt_"], input[type="checkbox"][id^="cocktail_"]');
@@ -806,8 +731,7 @@
             });
 
             return {
-                grillbuffet: menuPrefs,
-                grillbuffet_bemerkungen: document.getElementById('grillbuffet_bemerkungen').value,
+                
                 getraenke: getraenkePrefs,
                 getraenke_bemerkungen: document.getElementById('getraenke_bemerkungen').value
             };
@@ -881,7 +805,6 @@
                 quantity: "Siehe Buffet-Details",
                 // Neue Präferenzen-Felder
                 grillbuffet_praeferenzen: JSON.stringify(preferences.grillbuffet),
-                grillbuffet_bemerkungen: preferences.grillbuffet_bemerkungen,
                 getraenke_praeferenzen: JSON.stringify(preferences.getraenke),
                 getraenke_bemerkungen: preferences.getraenke_bemerkungen
             };
@@ -953,7 +876,6 @@
                     timestamp: new Date().toISOString(),
                     // Neue Präferenzen-Parameter
                     grillbuffet_praeferenzen: formData.grillbuffet_praeferenzen,
-                    grillbuffet_bemerkungen: formData.grillbuffet_bemerkungen,
                     getraenke_praeferenzen: formData.getraenke_praeferenzen,
                     getraenke_bemerkungen: formData.getraenke_bemerkungen
                 });
