@@ -561,13 +561,13 @@
             };
 
             try {
-                // Daten an n8n senden (POST mit JSON-Body)
+                // Daten an n8n senden (POST mit form-urlencoded - kein CORS Preflight)
                 const response = await fetch(N8N_WEBHOOK_URL, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/x-www-form-urlencoded'
                     },
-                    body: JSON.stringify(completeData)
+                    body: new URLSearchParams(completeData).toString()
                 });
 
                 if (response.ok) {
