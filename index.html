@@ -811,6 +811,19 @@
 
             // Validierung
             const buffetData = JSON.parse(formData.contribution);
+            // Getränke-Validierung
+            if (preferences.getraenke.length === 0) {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+                submitButton.style.backgroundColor = "#d4af37";
+                submitButton.style.cursor = "pointer";
+                
+                document.getElementById("errorMessage").textContent = "Bitte trage links deine Getränkewünsche ein.";
+                document.getElementById("errorMessage").style.display = "block";
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return;
+            }
+
             if (!formData.name || !formData.email) {
                 // Button wieder aktivieren bei Fehler
                 submitButton.disabled = false;
