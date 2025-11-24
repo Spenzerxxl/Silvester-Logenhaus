@@ -607,44 +607,22 @@
                 </div>
 
                 <div class="preferences-category">
-                    <h5>Sekt/Champagner:</h5>
+                    <h5>Sekt:</h5>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="sekt_prosecco" value="Prosecco">
                             <label for="sekt_prosecco">Prosecco</label>
                         </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sekt_champagner" value="Champagner">
-                            <label for="sekt_champagner">Champagner</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sekt_cava" value="Cava">
-                            <label for="sekt_cava">Cava</label>
-                        </div>
+                        
+                        
                     </div>
                 </div>
 
-                <div class="preferences-category">
-                    <h5>Silvester-Cocktails:</h5>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="cocktail_hugo" value="Hugo">
-                            <label for="cocktail_hugo">Hugo</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="cocktail_aperol" value="Aperol Spritz">
-                            <label for="cocktail_aperol">Aperol Spritz</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="cocktail_bellini" value="Bellini">
-                            <label for="cocktail_bellini">Bellini</label>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="preferences-category">
-                    <label for="getraenke_bemerkungen">Spezielle Wünsche zu den Getränken</label>
-                    <textarea class="preferences-textarea" id="getraenke_bemerkungen" placeholder="z.B. Gerne auch alkoholfreies Bier..."></textarea>
+                <div class="preferences-category" style="background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%); border: 2px solid #B8860B; border-radius: 10px; padding: 15px; margin-top: 15px;">
+                    <label for="getraenke_bemerkungen" style="color: #8B6914; font-weight: bold; font-size: 1.1em;">✨ Spezielle Wünsche zu den Getränken</label>
+                    <textarea class="preferences-textarea" id="getraenke_bemerkungen" placeholder="z.B. Gerne auch alkoholfreies Bier, bestimmte Weinsorte..." style="border: 1px solid #B8860B;"></textarea>
                 </div>
             </div>
         </div>
@@ -700,13 +678,13 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="contribution">Was möchtest du mitbringen? (optional)</label>
-                    <input type="text" id="contribution" name="contribution" placeholder="z.B. Kartoffelsalat (oder leer lassen)">
+                    <label for="contribution">Was möchtest du mitbringen?</label>
+                    <input type="text" id="contribution" name="contribution" placeholder="z.B. Kartoffelsalat, Brot, Dessert...">
                 </div>
 
                 <div class="form-group">
-                    <label for="quantity">Menge/Anzahl (optional)</label>
-                    <input type="text" id="quantity" name="quantity" placeholder="z.B. für 10 Personen (oder leer lassen)">
+                    <label for="quantity">Menge/Anzahl</label>
+                    <input type="text" id="quantity" name="quantity" placeholder="z.B. für 10 Personen">
                 </div>
 
                 <button type="button" id="add-buffet-item" class="button-secondary" onclick="addBuffetItem()">+ Weiteren Beitrag hinzufügen</button>
@@ -829,10 +807,10 @@
             const newItem = document.createElement("div");
             newItem.className = "form-group";
             newItem.innerHTML = `
-                <label for="contribution${buffetItemCount}">Weiterer Beitrag ${buffetItemCount} (optional)</label>
-                <input type="text" id="contribution${buffetItemCount}" name="contribution${buffetItemCount}" placeholder="z.B. Kartoffelsalat (optional)">
-                <label for="quantity${buffetItemCount}">Menge/Anzahl (optional)</label>
-                <input type="text" id="quantity${buffetItemCount}" name="quantity${buffetItemCount}" placeholder="z.B. für 10 Personen (optional)">
+                <label for="contribution${buffetItemCount}">Weiterer Beitrag ${buffetItemCount}</label>
+                <input type="text" id="contribution${buffetItemCount}" name="contribution${buffetItemCount}" placeholder="z.B. Nudelsalat, Kuchen...">
+                <label for="quantity${buffetItemCount}">Menge/Anzahl</label>
+                <input type="text" id="quantity${buffetItemCount}" name="quantity${buffetItemCount}" placeholder="z.B. für 8 Personen">
                 <button type="button" onclick="removeBuffetItem(this)" class="button-secondary">Entfernen</button>
             `;
             container.parentNode.insertBefore(newItem, container.nextSibling);
