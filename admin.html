@@ -798,8 +798,8 @@
             });
             
             document.getElementById('totalBuffetItems').textContent = buffetItems.size;
-            document.getElementById('aufbauHelfer').textContent = aufbauCount;
-            document.getElementById('abbauHelfer').textContent = abbauCount;
+            const aufbauEl = document.getElementById('aufbauHelfer'); if (aufbauEl) aufbauEl.textContent = aufbauCount;
+            const abbauEl = document.getElementById('abbauHelfer'); if (abbauEl) abbauEl.textContent = abbauCount;
         }
 
         // Teilnehmer-Tabelle aktualisieren
