@@ -303,7 +303,7 @@
 </head>
 <body>
     <!-- Login Screen -->
-    <div id="loginScreen" class="login-container">
+    <div id="loginScreen" class="login-container" style="display: none;">
         <h2 style="text-align: center; color: #1a1a1a; margin-bottom: 30px;">
             🏛️ Silvesterfeier 2025<br>
             Orga-Team Login
@@ -331,13 +331,13 @@
     </div>
 
     <!-- Dashboard -->
-    <div id="dashboard" style="display: none;">
+    <div id="dashboard" style="display: block;">
         <div class="container">
             <div class="header">
                 <h1>🏛️ Silvesterfeier 2025 - Orga-Dashboard</h1>
                 <div class="user-info">
                     <span>Willkommen, <strong id="currentUserName">Admin</strong></span>
-                    <button class="btn btn-warning" onclick="logout()">Abmelden</button>
+                    
                 </div>
             </div>
 
@@ -1861,21 +1861,14 @@ Das Orga-Team</textarea>
 
         // Initial Load
         window.addEventListener('load', function() {
-            const currentUser = localStorage.getItem('currentUser');
-            if (currentUser) {
-                showDashboard();
-            } else {
-                showLogin();
-            }
+            // Kein Login erforderlich - direkt Dashboard anzeigen
+            showDashboard();
         });
     
         // E-Mail Reminder Function
         async function sendSmartReminder() {
             // Admin check
-            if (!isLoggedIn) {
-                alert('Nicht autorisiert! Bitte melden Sie sich an.');
-                return;
-            }
+            // Login-Check entfernt
             
             // Get current participant count
             const participantCount = currentData.participants ? currentData.participants.length : 0;
