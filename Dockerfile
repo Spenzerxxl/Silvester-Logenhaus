@@ -1,9 +1,10 @@
 FROM nginx:alpine
 
-# Kopiere Website-Dateien
-COPY index.html /usr/share/nginx/html/
-COPY Logenhaus_blue.jpg /usr/share/nginx/html/
-COPY admin.html /usr/share/nginx/html/
+# Kopiere alle HTML-Dateien
+COPY *.html /usr/share/nginx/html/
+COPY *.jpg /usr/share/nginx/html/
+COPY *.css /usr/share/nginx/html/
+COPY *.js /usr/share/nginx/html/
 
 # Kopiere nginx-Konfiguration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
