@@ -583,9 +583,6 @@
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('dashboard').style.display = 'block';
             
-            const currentUser = localStorage.getItem('currentUser');
-            document.getElementById('currentUserName').textContent = currentUser || 'Admin';
-            
             loadDashboardData();
             showTab("buffet"); // Standard-Tab beim Login
         }
