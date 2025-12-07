@@ -351,7 +351,7 @@
                 <div class="stat-card" onclick="showTab('buffet')" style="cursor: pointer;">
                     <h3>🍽️ Buffet-Beiträge</h3>
                     <div class="stat-number" id="totalBuffetItems">0</div>
-                    <small>Verschiedene Gerichte</small>
+                    <small>Verschiedene Beiträge</small>
                 </div>
                 <div class="stat-card" onclick="showTab('preferences')" style="cursor: pointer;">
                     <h3>⭐ Präferenzen</h3>
@@ -397,15 +397,14 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Gericht</th>
+                                <th>Buffetbeitrag</th>
                                 <th>Anbieter</th>
-                                <th>Portionen</th>
                                 <th>Kontakt</th>
                             </tr>
                         </thead>
                         <tbody id="buffetTable">
                             <tr>
-                                <td colspan="4" class="loading">Lade Buffet-Daten...</td>
+                                <td colspan="3" class="loading">Lade Buffet-Daten...</td>
                             </tr>
                         </tbody>
                     </table>
@@ -932,7 +931,7 @@
             });
             
             if (buffetItems.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #666;">Noch keine Buffet-Beiträge</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #666;">Noch keine Buffet-Beiträge</td></tr>';
                 return;
             }
             
@@ -940,7 +939,7 @@
                 <tr>
                     <td><strong>${item.name}</strong></td>
                     <td>${item.provider}</td>
-                    <td>${item.quantity}</td>
+                    
                     <td>${item.email}</td>
                 </tr>
             `).join('');
