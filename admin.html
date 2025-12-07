@@ -1133,6 +1133,7 @@
         // Helfer-Tabelle aktualisieren
         function updateHelpersTable() {
             const tbody = document.getElementById('helpersTable');
+            if (!tbody) return; // Helfer-Tab nicht vorhanden
             const participants = currentData.participants;
             
             const helpers = participants.filter(p => 
