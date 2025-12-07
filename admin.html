@@ -269,6 +269,32 @@
         }
 
         @media (max-width: 768px) {
+            .stats-grid {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 8px;
+                margin-bottom: 15px;
+            }
+            
+            .stat-card {
+                flex: 1 1 0;
+                min-width: 0;
+                padding: 10px 5px;
+            }
+            
+            .stat-card h3 {
+                font-size: 0.75em;
+                margin-bottom: 5px;
+            }
+            
+            .stat-number {
+                font-size: 1.5em;
+            }
+            
+            .stat-card small {
+                font-size: 0.65em;
+            }
+            
             .preferences-grid {
                 grid-template-columns: 1fr;
             }
@@ -335,10 +361,6 @@
         <div class="container">
             <div class="header">
                 <h1>🏛️ Silvesterfeier 2025 - Orga-Dashboard</h1>
-                <div class="user-info">
-                    <span>Willkommen, <strong id="currentUserName">Admin</strong></span>
-                    
-                </div>
             </div>
 
             <!-- Statistik-Karten -->
