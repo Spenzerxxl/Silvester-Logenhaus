@@ -835,7 +835,7 @@
             tbody.innerHTML = participants.map(p => {
                 const lodge = p.loge || mapLodgeFromData(p.email, p.name);
                 const companions = calculateEnhancedCompanionInfo(p);
-                const formattedDate = p.datum ? new Date(p.datum).toLocaleDateString('de-DE') : 'N/A';
+                const d = new Date(p.datum); const formattedDate = p.datum && !isNaN(d) ? `${d.getDate().toString().padStart(2,'0')}.${(d.getMonth()+1).toString().padStart(2,'0')}.${d.getFullYear()}` : 'N/A';
                 
                 return `
                     <tr>
